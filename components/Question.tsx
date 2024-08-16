@@ -12,6 +12,7 @@ export default function Question({
   onGoBack,
   onGoToLanding,
   isFirstQuestion,
+  progress,
 }: {
   question: string;
   options: string[];
@@ -19,10 +20,11 @@ export default function Question({
   onGoBack: () => void;
   onGoToLanding: () => void;
   isFirstQuestion: boolean;
+  progress: number;
 }) {
   return (
     <div className="flex flex-col items-center justify-start pt-14 h-screen bg-zinc-400">
-      <ProgressBar onGoToLanding={onGoToLanding} />
+      <ProgressBar onGoToLanding={onGoToLanding} progress={progress} />
       {!isFirstQuestion && ( // Conditionally render the Go Back button
         <button onClick={onGoBack} className="flex w-80 items-center mt-5">
           <Image

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Landing from "./Landing";
 import Question from "./Question";
 import Result from "./Result";
+import GenerateResult from "./GenerateResult";
 
 export default function Quiz() {
   const questions = [
@@ -19,7 +20,7 @@ export default function Quiz() {
       options: ["Pizza", "Sushi"],
     },
   ];
-  const [step, setStep] = useState(0); // 0: Landing, 1: Question, 2: Result
+  const [step, setStep] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
 
@@ -29,7 +30,7 @@ export default function Quiz() {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      setStep(2); // Go to the result page
+      setStep(3); // Go to GenerateResult after the last question
     }
   };
 
@@ -44,20 +45,23 @@ export default function Quiz() {
     setStep(0); // Go back to the landing page
   };
 
-  // const handleAnswer = (index: number) => {
-  //   setScore(score + index);
-  //   if (currentQuestionIndex < questions.length - 1) {
-  //     setCurrentQuestionIndex(currentQuestionIndex + 1);
-  //   } else {
-  //     setStep(2);
-  //   }
-  // };
+  const handleGenerateResult = () => {
+    setStep(4); // Move to the Result component after generating the result
+  };
 
-  const restartQuiz = () => {
-    setStep(0);
+  const handleRestart = () => {
     setCurrentQuestionIndex(0);
     setScore(0);
+    setStep(0);
   };
+
+  // Calculate progress as a percentage, considering the extra step for GenerateResult
+  const totalSteps = questions.length + 2; // Include GenerateResult and Result steps
+  const progress =
+    step === 3
+      ? 100 // 100% when on the GenerateResult screen
+      : (currentQuestionIndex / questions.length) * 100;
+
   return (
     <>
       {step === 0 && <Landing onStart={startQuiz} />}
@@ -69,9 +73,17 @@ export default function Quiz() {
           onGoBack={handlePreviousQuestion}
           onGoToLanding={handleGoToLanding}
           isFirstQuestion={currentQuestionIndex === 0}
+          progress={progress}
         />
       )}
-      {step === 2 && <Result score={score} onRestart={restartQuiz} />}
+      {step === 3 && (
+        <GenerateResult
+          onGenerate={handleGenerateResult}
+          onGoToLanding={handleGoToLanding}
+          progress={progress}
+        />
+      )}
+      {step === 4 && <Result score={score} onRestart={handleRestart} />}
     </>
   );
 }
