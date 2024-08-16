@@ -8,15 +8,15 @@ export default function Quiz() {
   const questions = [
     {
       question: "What is your favorite color?",
-      options: ["Red", "Blue", "Green", "Yellow"],
+      options: ["Red", "Blue"],
     },
     {
       question: "What is your favorite animal?",
-      options: ["Dog", "Cat", "Bird", "Fish"],
+      options: ["Dog", "Cat"],
     },
     {
       question: "What is your favorite food?",
-      options: ["Pizza", "Sushi", "Burger", "Pasta"],
+      options: ["Pizza", "Sushi"],
     },
   ];
   const [step, setStep] = useState(0); // 0: Landing, 1: Question, 2: Result
