@@ -25,14 +25,33 @@ export default function Quiz() {
 
   const startQuiz = () => setStep(1);
 
-  const handleAnswer = (index: number) => {
-    setScore(score + index);
+  const handleNextQuestion = (index: number) => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      setStep(2);
+      setStep(2); // Go to the result page
     }
   };
+
+  const handlePreviousQuestion = () => {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
+    }
+  };
+
+  const handleGoToLanding = () => {
+    setCurrentQuestionIndex(0);
+    setStep(0); // Go back to the landing page
+  };
+
+  // const handleAnswer = (index: number) => {
+  //   setScore(score + index);
+  //   if (currentQuestionIndex < questions.length - 1) {
+  //     setCurrentQuestionIndex(currentQuestionIndex + 1);
+  //   } else {
+  //     setStep(2);
+  //   }
+  // };
 
   const restartQuiz = () => {
     setStep(0);
@@ -46,7 +65,10 @@ export default function Quiz() {
         <Question
           question={questions[currentQuestionIndex].question}
           options={questions[currentQuestionIndex].options}
-          onAnswer={handleAnswer}
+          onAnswer={handleNextQuestion}
+          onGoBack={handlePreviousQuestion}
+          onGoToLanding={handleGoToLanding}
+          isFirstQuestion={currentQuestionIndex === 0}
         />
       )}
       {step === 2 && <Result score={score} onRestart={restartQuiz} />}
