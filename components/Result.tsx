@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import html2canvas from "html2canvas";
 
 import Image from "next/image";
-import sampleResult from "../public/sample-result.png";
+import sampleResult from "../public/placeholder-image.png";
 
 export default function Result({
   score,
