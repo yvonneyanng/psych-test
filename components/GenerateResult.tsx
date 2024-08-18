@@ -23,13 +23,13 @@ export default function GenerateResult({
     }, 2000);
   };
   return (
-    <div className="flex flex-col pt-14 items-center justify-center h-screen bg-zinc-400">
+    <div className="flex flex-col pt-24 items-center justify-start h-screen bg-zinc-400">
       {isLoading ? (
         <div className="text-black">正在分析...</div>
       ) : (
         <div className="flex flex-col h-full">
           <ProgressBar progress={progress} onGoToLanding={onGoToLanding} />
-          <div className="flex flex-col flex-1 items-center justify-center space-y-20">
+          <div className="flex flex-col flex-1 items-center justify-start mt-36">
             <Image
               src={placeholder}
               height={250}

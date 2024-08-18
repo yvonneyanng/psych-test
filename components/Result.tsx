@@ -27,13 +27,8 @@ export default function Result({
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-zinc-400">
-      <h1 className="text-3xl font-bold mb-10">Result image here</h1>
-      <Image
-        src={sampleResult}
-        width={200}
-        height={300}
-        alt="Picture of the author"
-      />
+      {/* <h1 className="text-3xl font-bold mb-10">Result image here</h1> */}
+      <Image src={sampleResult} width={300} alt="Picture of the author" />
       <div className="flex w-72 mt-10 justify-between">
         <button
           onClick={onRestart}
