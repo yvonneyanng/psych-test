@@ -29,11 +29,11 @@ export default function GenerateResult({
       ) : (
         <div className="flex flex-col h-full">
           <ProgressBar progress={progress} onGoToLanding={onGoToLanding} />
-          <div className="flex flex-col flex-1 items-center justify-start mt-36">
+          <div className="flex flex-col flex-1 items-center justify-start mt-16">
             <Image
               src={placeholder}
               height={250}
-              width={150}
+              width={250}
               alt="placeholder"
             />
             <button
