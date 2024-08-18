@@ -30,7 +30,7 @@ export default function Quiz() {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      setStep(3); // Go to GenerateResult after the last question
+      setStep(3);
     }
   };
 
@@ -42,11 +42,11 @@ export default function Quiz() {
 
   const handleGoToLanding = () => {
     setCurrentQuestionIndex(0);
-    setStep(0); // Go back to the landing page
+    setStep(0);
   };
 
   const handleGenerateResult = () => {
-    setStep(4); // Move to the Result component after generating the result
+    setStep(4);
   };
 
   const handleRestart = () => {
@@ -55,12 +55,8 @@ export default function Quiz() {
     setStep(0);
   };
 
-  // Calculate progress as a percentage, considering the extra step for GenerateResult
-  const totalSteps = questions.length + 2; // Include GenerateResult and Result steps
   const progress =
-    step === 3
-      ? 100 // 100% when on the GenerateResult screen
-      : (currentQuestionIndex / questions.length) * 100;
+    step === 3 ? 100 : (currentQuestionIndex / questions.length) * 100;
 
   return (
     <>

@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import html2canvas from "html2canvas";
 
 import Image from "next/image";
 import sampleResult from "../public/placeholder-image.png";
@@ -11,26 +10,7 @@ export default function Result({
   score: number;
   onRestart: () => void;
 }) {
-  const resultRef = useRef<HTMLDivElement>(null);
   const [linkCopied, setLinkCopied] = useState(false);
-
-  const handleSaveImage = () => {
-    if (resultRef.current) {
-      html2canvas(resultRef.current).then((canvas) => {
-        const imageURL = canvas.toDataURL("image/png");
-        const newWindow = window.open();
-        if (newWindow) {
-          newWindow.document.write(`
-            <p>Long press the image below to save it to your gallery.</p>
-            <img src="${imageURL}" alt="Result Image" />
-          `);
-          newWindow.document.title = "Save your result";
-        } else {
-          alert("Please enable popups for this site to save the image.");
-        }
-      });
-    }
-  };
 
   const handleCopyLink = () => {
     const currentUrl = window.location.href;
@@ -38,7 +18,7 @@ export default function Result({
       .writeText(currentUrl)
       .then(() => {
         setLinkCopied(true);
-        setTimeout(() => setLinkCopied(false), 2000); // Reset after 2 seconds
+        setTimeout(() => setLinkCopied(false), 2000);
       })
       .catch((err) => {
         console.error("Failed to copy: ", err);
@@ -46,34 +26,30 @@ export default function Result({
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-3xl font-bold mb-4">Result image here</h1>
+    <div className="flex flex-col items-center justify-center h-screen bg-zinc-400">
+      <h1 className="text-3xl font-bold mb-10">Result image here</h1>
       <Image
         src={sampleResult}
         width={200}
         height={300}
         alt="Picture of the author"
       />
-      <button
-        onClick={onRestart}
-        className="bg-blue-500 text-white px-4 py-2 rounded"
-      >
-        Restart Quiz
-      </button>
-      <button
-        onClick={handleSaveImage}
-        className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
-      >
-        Save Image
-      </button>
-      <button
-        onClick={handleCopyLink}
-        className={`px-4 py-2 rounded mt-4 ${
-          linkCopied ? "bg-green-500 text-white" : "bg-gray-500 text-white"
-        }`}
-      >
-        {linkCopied ? "Link Copied!" : "Copy Link"}
-      </button>
+      <div className="flex w-72 mt-10 justify-between">
+        <button
+          onClick={onRestart}
+          className="flex-1 mx-1 bg-gray-300 text-black px-4 py-2 rounded"
+        >
+          再測一次
+        </button>
+        <button
+          onClick={handleCopyLink}
+          className={`flex-1 mx-1 px-4 py-2 rounded ${
+            linkCopied ? "bg-green-500 text-white" : "bg-gray-300 text-black"
+          }`}
+        >
+          {linkCopied ? "連結已複製!" : "複製連結"}
+        </button>
+      </div>
     </div>
   );
 }

@@ -25,20 +25,24 @@ export default function Question({
   return (
     <div className="flex flex-col items-center justify-start pt-14 h-screen bg-zinc-400">
       <ProgressBar onGoToLanding={onGoToLanding} progress={progress} />
-      {!isFirstQuestion && ( // Conditionally render the Go Back button
-        <button onClick={onGoBack} className="flex w-80 items-center mt-5">
-          <Image
-            src={back}
-            height={30}
-            width={30}
-            alt="Back"
-            className="filter invert"
-          />
-          <p className="text-white text-sm">回上一題</p>
-        </button>
-      )}
+      <button
+        onClick={onGoBack}
+        className={`flex w-80 items-center mt-5 ${
+          isFirstQuestion ? "invisible" : ""
+        }`}
+        disabled={isFirstQuestion}
+      >
+        <Image
+          src={back}
+          height={30}
+          width={30}
+          alt="Back"
+          className="filter invert"
+        />
+        <p className="text-white text-sm">回上一題</p>
+      </button>
       <div className="flex flex-col flex-1 items-center justify-start space-y-10">
-        <p className="text-lg font-semibold mt-16">{question}</p>
+        <p className="text-lg font-semibold mt-10">{question}</p>
         <Image src={sampleImage} height={250} width={150} alt="Plot Image" />
         <div className="flex flex-col space-y-5">
           {options.map((option, index) => (

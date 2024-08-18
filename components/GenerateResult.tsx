@@ -19,8 +19,8 @@ export default function GenerateResult({
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      onGenerate(); // Trigger the result generation after loading
-    }, 2000); // Simulate a 2-second loading time
+      onGenerate();
+    }, 2000);
   };
   return (
     <div className="flex flex-col pt-14 items-center justify-center h-screen bg-zinc-400">

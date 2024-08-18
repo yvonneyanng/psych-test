@@ -15,7 +15,7 @@ const ProgressBar = ({
       <div className="h-6 bg-zinc-200 rounded-full w-full">
         <div
           className="h-6 bg-zinc-500 rounded-full"
-          style={{ width: `${progress}%` }} // Set the width based on progress
+          style={{ width: `${progress}%` }}
         ></div>
       </div>
       <button onClick={onGoToLanding}>
