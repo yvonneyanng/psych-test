@@ -1,0 +1,140 @@
+{
+  "Landing": {
+    "title": "Title",
+    "startButton": "Start Test",
+    "description": "Description",
+    "enterButton": "Let's Go"
+  },
+  "Question": {
+    "q1": {
+      "title": "What do you most want to do first after arriving in Australia?",
+      "options": {
+        "1": "Find a place in your school or city where you can study or work on your own projects",
+        "2": "Can't wait to join the school's orientation activities and meet new friends",
+        "3": "Search for job opportunities near your home",
+        "4": "Explore the city and find interesting places to visit"
+      }
+    },
+    "q2": {
+      "title": "How would you like to spend an ordinary weekend?",
+      "options": {
+        "1": "Stay at home to finish assignments or review coursework",
+        "2": "Join various activities or gatherings with friends",
+        "3": "Work, especially if there's double pay on weekends",
+        "4": "Go out and have fun; surfing, fishing, or running"
+      }
+    },
+    "q3": {
+      "title": "What would you do if you don't understand the class content?",
+      "options": {
+        "1": "Immediately seek additional learning resources, like consulting the teacher or getting tutoring",
+        "2": "Form a study group with classmates to discuss and solve the problem together",
+        "3": "Ask classmates or solve it quickly by yourself; it's okay if it's not perfect, but work must be done",
+        "4": "Take a break to relax before tackling the problem again"
+      }
+    },
+    "q4": {
+      "title": "After class, a friend invites you to eat nearby. What would you do?",
+      "options": {
+        "1": "Maybe not this time, I have another class later, I'll go home to prepare",
+        "2": "Why not! Hanging out with friends is more fun than attending class",
+        "3": "Sure, but I might have to leave early because I have work later",
+        "4": "No problem! Should we catch a movie after eating?"
+      }
+    },
+    "q5": {
+      "title": "If your school offers an internship opportunity, how would you choose?",
+      "options": {
+        "1": "Study hard to enhance professional knowledge and improve grades",
+        "2": "Choose an internship related to interpersonal skills to expand your social circle",
+        "3": "Choose an internship that enhances workplace skills and offers compensation",
+        "4": "Choose an internship that balances work and travel"
+      }
+    },
+    "q6": {
+      "title": "How would you plan for the upcoming long holiday in two weeks?",
+      "options": {
+        "1": "Finally, I have time to catch up on all my coursework and even get ahead on future classes",
+        "2": "It's finally a break, I want to hang out and eat with friends",
+        "3": "See if there's any work shifts available; if not, I'll just rest at home",
+        "4": "No classes? Then I definitely want to travel to another city and have fun!"
+      }
+    },
+    "q7": {
+      "title": "The due date for your report is next Monday, but a friend invites you to go out this weekend. How would you respond?",
+      "options": {
+        "1": "Sorry guys, I need to go home and prepare, I'm really running out of time",
+        "2": "I never miss a friend's invite; I'll prepare for the finals after we come back",
+        "3": "Let me check if I have work; if not, I'll join you",
+        "4": "Let's go! I have a few places in mind I want to visit"
+      }
+    },
+    "q8": {
+      "title": "On the first day of class, the teacher says there will be a group project. How would you choose your group members?",
+      "options": {
+        "1": "I want to team up with classmates who seem serious and responsible",
+        "2": "Of course, I'll team up with friends or classmates I get along with; it's a chance to bond while working on the project",
+        "3": "Priority goes to classmates with work experience or who are reliable, so we can complete the project efficiently, leaving me more time for work",
+        "4": "I want to team up with fun and easy-going people; the project might be boring, but the process should be enjoyable!"
+      }
+    },
+    "q9": {
+      "title": "What would you do if you find yourself falling behind in class?",
+      "options": {
+        "1": "I'll probably spend the next week glued to my computer, catching up on everything I've missed",
+        "2": "Ask others how they're doing and seek their advice",
+        "3": "Oh no, this is dangerous; I might need to take fewer work shifts to catch up",
+        "4": "Don't stress too much, get a bubble tea to relax first, then catch up on the coursework"
+      }
+    },
+    "q10": {
+      "title": "When friends invite you to join a school club, how would you respond?",
+      "options": {
+        "1": "I'll check if the club is related to my studies; if it helps enhance my professional knowledge, I'll consider joining",
+        "2": "Of course, I'll join! Club activities are a great way to make new friends and expand my network",
+        "3": "If the club's schedule doesn't conflict with my work, I'll consider joining; it's important to balance work and life",
+        "4": "If the club activities are fun, I'll join. It's a good way to relax!"
+      }
+    },
+    "q11": {
+      "title": "What do you do when you feel homesick?",
+      "options": {
+        "1": "Focus on my studies and try to keep myself busy, so I don't dwell too much on missing home",
+        "2": "Hang out, eat, drink, and chat with friends to alleviate homesickness",
+        "3": "Work harder, stay positive, and start planning my next visit home",
+        "4": "Find some food from home or listen to music to relax"
+      }
+    },
+    "q12": {
+      "title": "How do you handle meeting classmates from different cultures?",
+      "options": {
+        "1": "I would first observe and understand their cultural background and interact with them respectfully",
+        "2": "Actively share cultures with classmates from different backgrounds and invite them to hang out, building friendships quickly",
+        "3": "Try to find common interests and look for possible cooperation opportunities, leveraging the advantages of different cultures",
+        "4": "Take a relaxed approach to cultural differences, and try to find interesting aspects of their culture, making the interaction more enjoyable"
+      }
+    },
+    "q13": {
+      "title": "What action do you take after seeing a group for international students in Australia?",
+      "options": {
+        "1": "I find some content about Australian schools interesting, so I follow it",
+        "2": "I see regular gatherings being held, so I follow it and might join to meet new friends",
+        "3": "It's a sub-community for Australian professionals with relevant resources, so I follow it for long-term benefits",
+        "4": "Everything about the content and the people seems fun, so I definitely want to follow and participate in their activities!"
+      }
+    },
+    "goback": "Go Back",
+    "ending": "Story Ending",
+    "submit": "View Test Results",
+    "loading": "Analyzing..."
+  },
+  "Result": {
+    "shareButton": "Share Test",
+    "againButton": "Take Test Again",
+    "subscribeTitle": "Subscribe to First-hand News for International Students in Australia!",
+    "namePH": "Name",
+    "emailPH": "Email",
+    "subscribeButton": "Subscribe",
+    "promoteTitle": "Welcome to Join the International Students in Australia Community!"
+  }
+}

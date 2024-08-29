@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "留學生在澳洲",
-  description: "加點說明????",
+  description: "誰是你的澳洲留學代表物?",
 };
 
 export default function RootLayout({
