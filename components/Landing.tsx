@@ -10,10 +10,10 @@ export default function Landing({ onStart }: LandingProps) {
 
   useEffect(() => {
     const path = window.location.pathname;
-    if (path.startsWith("/zh-TW")) {
-      setSelectedLang("zh-TW");
-    } else if (path.startsWith("/en")) {
+    if (path.startsWith("/en")) {
       setSelectedLang("en");
+    } else {
+      setSelectedLang("zh-TW");
     }
   }, []);
 
@@ -21,7 +21,7 @@ export default function Landing({ onStart }: LandingProps) {
     <div className="h-[100dvh] flex flex-col justify-start items-center pt-10">
       <div className="flex flex-col self-end px-6">
         <div className="bg-zinc-400 rounded-full">
-          <Link href="/zh-TW">
+          <Link href="/" locale="zh-TW">
             <div
               onClick={() => setSelectedLang("zh-TW")}
               className={`p-2 text-sm text-center rounded-full cursor-pointer ${
