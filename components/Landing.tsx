@@ -1,27 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 export default function Landing({ onStart }: { onStart: () => void }) {
   const t = useTranslations("Landing");
+
+  const [selectedLang, setSelectedLang] = useState("");
+
+  useEffect(() => {
+    const path = window.location.pathname;
+    if (path.startsWith("/zh-TW")) {
+      setSelectedLang("zh-TW");
+    } else if (path.startsWith("/en")) {
+      setSelectedLang("en");
+    }
+  }, []);
+
   return (
     <div className="h-[100dvh] flex flex-col justify-start items-center pt-10">
       <div className="flex flex-col self-end px-6">
         <div className="bg-zinc-400 rounded-full">
-          <Link href="/">
+          <Link href="/zh-TW">
             <div
-              className={
-                "p-2 text-sm text-center rounded-full text-white cursor-pointer"
-              }
+              onClick={() => setSelectedLang("zh-TW")}
+              className={`p-2 text-sm text-center rounded-full cursor-pointer ${
+                selectedLang === "zh-TW"
+                  ? "bg-zinc-500 text-white"
+                  : "bg-transparent text-gray-800"
+              }`}
             >
               中
             </div>
           </Link>
-          <Link href="/">
+          <Link href="/en">
             <div
-              className={
-                "p-2 text-sm text-center rounded-full bg-zinc-500 text-white cursor-pointer"
-              }
+              onClick={() => setSelectedLang("en")}
+              className={`p-2 text-sm text-center rounded-full cursor-pointer ${
+                selectedLang === "en"
+                  ? "bg-zinc-500 text-white"
+                  : "bg-transparent text-gray-800"
+              }`}
             >
               EN
             </div>
