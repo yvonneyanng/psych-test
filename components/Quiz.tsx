@@ -80,7 +80,7 @@ export default function Quiz() {
           progress={progress}
         />
       )}
-      {step === 4 && <Result score={score} onRestart={handleRestart} />}
+      {step === 4 && <Result onRestart={handleRestart} />}
     </>
   );
 }

@@ -1,15 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import sampleResult from "../public/placeholder-image.png";
 import { useTranslations } from "next-intl";
+import { ResultProps } from "@/types/Result-types";
 
-export default function Result({
-  score,
-  onRestart,
-}: {
-  score: number;
-  onRestart: () => void;
-}) {
+export default function Result({ onRestart }: ResultProps) {
   const [linkCopied, setLinkCopied] = useState(false);
   const t = useTranslations("Result");
 

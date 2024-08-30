@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import ProgressBar from "./ProgressBar";
+import { GenerateResultProps } from "@/types/GenerateResult-types";
 
 import placeholder from "../public/placeholder-image.png";
 import { useTranslations } from "next-intl";
@@ -9,11 +10,7 @@ export default function GenerateResult({
   onGenerate,
   onGoToLanding,
   progress,
-}: {
-  onGenerate: () => void;
-  onGoToLanding: () => void;
-  progress: number;
-}) {
+}: GenerateResultProps) {
   const [isLoading, setIsLoading] = useState(false);
   const t = useTranslations("Question");
 

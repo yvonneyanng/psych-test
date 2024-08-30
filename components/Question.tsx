@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import ProgressBar from "./ProgressBar";
+import { QuestionProps } from "@/types/Question-types";
 
 import sampleImage from "../public/placeholder-image.png";
 import back from "../public/back-icon.png";
@@ -15,16 +16,9 @@ export default function Question({
   onGoToLanding,
   isFirstQuestion,
   progress,
-}: {
-  question: string;
-  options: string[];
-  onAnswer: (index: number) => void;
-  onGoBack: () => void;
-  onGoToLanding: () => void;
-  isFirstQuestion: boolean;
-  progress: number;
-}) {
+}: QuestionProps) {
   const t = useTranslations("Question");
+
   return (
     <div className="flex flex-col items-center justify-start h-[100dvh]">
       <ProgressBar onGoToLanding={onGoToLanding} progress={progress} />

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { LandingProps } from "@/types/Landing-types";
 
-export default function Landing({ onStart }: { onStart: () => void }) {
+export default function Landing({ onStart }: LandingProps) {
   const t = useTranslations("Landing");
 
   const [selectedLang, setSelectedLang] = useState("");

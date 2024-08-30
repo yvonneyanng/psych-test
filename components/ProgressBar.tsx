@@ -1,15 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import { ProgressBarProps } from "@/types/ProgressBar-types";
 
 import home from "../public/home-icon.png";
 
-const ProgressBar = ({
-  onGoToLanding,
-  progress,
-}: {
-  onGoToLanding: () => void;
-  progress: number;
-}) => {
+const ProgressBar = ({ onGoToLanding, progress }: ProgressBarProps) => {
   return (
     <div className="flex items-center w-[85dvw] space-x-5 mt-14">
       <div className="h-6 bg-zinc-200 rounded-full w-full">
