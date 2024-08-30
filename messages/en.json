@@ -1,7 +1,7 @@
 {
   "Landing": {
     "title": "Title",
-    "startButton": "Start Test",
+    "startButton": "Start",
     "description": "Description",
     "enterButton": "Let's Go"
   },
@@ -123,14 +123,15 @@
         "4": "Everything about the content and the people seems fun, so I definitely want to follow and participate in their activities!"
       }
     },
-    "goback": "Go Back",
+    "goback": "Go back",
     "ending": "Story Ending",
     "submit": "View Test Results",
     "loading": "Analyzing..."
   },
   "Result": {
-    "shareButton": "Share Test",
-    "againButton": "Take Test Again",
+    "copyButton": "Copy Link",
+    "copied": "Copied!",
+    "againButton": "Test Again",
     "subscribeTitle": "Subscribe to First-hand News for International Students in Australia!",
     "namePH": "Name",
     "emailPH": "Email",

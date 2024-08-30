@@ -11,10 +11,10 @@ const ProgressBar = ({
   progress: number;
 }) => {
   return (
-    <div className="flex items-center w-80 space-x-5">
+    <div className="flex items-center w-[85dvw] space-x-5 mt-14">
       <div className="h-6 bg-zinc-200 rounded-full w-full">
         <div
-          className="h-6 bg-zinc-500 rounded-full"
+          className="h-6 bg-neutral-500 rounded-full shadow-[inset_4px_-4px_5px_rgba(0,0,0,0.3)]"
           style={{ width: `${progress}%` }}
         ></div>
       </div>

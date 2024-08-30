@@ -3,6 +3,7 @@ import Image from "next/image";
 import ProgressBar from "./ProgressBar";
 
 import placeholder from "../public/placeholder-image.png";
+import { useTranslations } from "next-intl";
 
 export default function GenerateResult({
   onGenerate,
@@ -14,6 +15,7 @@ export default function GenerateResult({
   progress: number;
 }) {
   const [isLoading, setIsLoading] = useState(false);
+  const t = useTranslations("Question");
 
   const handleClick = () => {
     setIsLoading(true);
@@ -23,13 +25,13 @@ export default function GenerateResult({
     }, 2000);
   };
   return (
-    <div className="flex flex-col pt-14 items-center justify-center h-screen bg-zinc-400">
+    <div className="flex flex-col items-center justify-center h-[100dvh]">
       {isLoading ? (
-        <div className="text-black">正在分析...</div>
+        <div className="text-black">{t("loading")}...</div>
       ) : (
         <div className="flex flex-col h-full">
           <ProgressBar progress={progress} onGoToLanding={onGoToLanding} />
-          <div className="flex flex-col flex-1 items-center justify-start mt-16">
+          <div className="flex flex-col flex-1 items-center justify-center">
             <Image
               src={placeholder}
               height={250}
@@ -40,7 +42,7 @@ export default function GenerateResult({
               onClick={handleClick}
               className="bg-gray-200 text-black px-4 py-2 rounded mt-5"
             >
-              查看測驗結果
+              {t("submit")}
             </button>
           </div>
         </div>
