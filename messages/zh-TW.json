@@ -129,11 +129,13 @@
     "loading": "正在分析..."
   },
   "Result": {
+    "saveHint": "→ 長按圖片儲存測驗結果 ←",
     "copyButton": "複製連結",
     "againButton": "再測一次",
     "subscribeTitle": "訂閱留學生在澳洲第一手消息！",
     "namePH": "姓名",
     "emailPH": "電子郵件",
+    "invalidEmail": "Email格式錯誤",
     "subscribeButton": "訂閱",
     "promoteTitle": "歡迎加入留學生在澳洲社群！"
   }

@@ -129,12 +129,14 @@
     "loading": "Analyzing..."
   },
   "Result": {
+    "saveHint": "→ Long press the image to save the test result ←",
     "copyButton": "Copy Link",
     "copied": "Copied!",
     "againButton": "Test Again",
     "subscribeTitle": "Subscribe to First-hand News for International Students in Australia!",
     "namePH": "Name",
     "emailPH": "Email",
+    "invalidEmail": "Invalid email address",
     "subscribeButton": "Subscribe",
     "promoteTitle": "Welcome to Join the International Students in Australia Community!"
   }
