@@ -7,7 +7,6 @@ import {
   SiSpotify,
   SiNotion,
 } from "react-icons/si";
-import { color } from "html2canvas/dist/types/css/types/color";
 
 export default function Socials() {
   const t = useTranslations("Result");
