@@ -5,21 +5,22 @@ import Question from "./Question";
 import Result from "./Result";
 import GenerateResult from "./GenerateResult";
 
+import { useTranslations } from "next-intl";
+
 export default function Quiz() {
-  const questions = [
-    {
-      question: "What is your favorite color?",
-      options: ["Red", "Blue"],
-    },
-    {
-      question: "What is your favorite animal?",
-      options: ["Dog", "Cat"],
-    },
-    {
-      question: "What is your favorite food?",
-      options: ["Pizza", "Sushi"],
-    },
-  ];
+  const t = useTranslations("Question");
+  const questions = Array.from({ length: 13 }, (_, index) => {
+    const questionNumber = `q${index + 1}`;
+    return {
+      question: t(`${questionNumber}.title`),
+      options: [
+        t(`${questionNumber}.options.1`),
+        t(`${questionNumber}.options.2`),
+        t(`${questionNumber}.options.3`),
+        t(`${questionNumber}.options.4`),
+      ],
+    };
+  });
   const [step, setStep] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
@@ -79,7 +80,7 @@ export default function Quiz() {
           progress={progress}
         />
       )}
-      {step === 4 && <Result score={score} onRestart={handleRestart} />}
+      {step === 4 && <Result onRestart={handleRestart} />}
     </>
   );
 }
