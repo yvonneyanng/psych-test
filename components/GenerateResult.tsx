@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import ProgressBar from "./ProgressBar";
 import { GenerateResultProps } from "@/types/GenerateResult-types";
+import logo from "../assets/logo.png";
 
 import placeholder from "../public/placeholder-image.png";
 import { useTranslations } from "next-intl";
@@ -19,12 +20,17 @@ export default function GenerateResult({
     setTimeout(() => {
       setIsLoading(false);
       onGenerate();
-    }, 2000);
+    }, 10000);
   };
   return (
     <div className="flex flex-col items-center justify-center h-[100dvh]">
       {isLoading ? (
-        <div className="text-black">{t("loading")}...</div>
+        <div className="text-black space-y-5">
+          <div className="animate-jump">
+            <Image src={logo} width={100} alt="loading" />
+          </div>
+          <p>{t("loading")}...</p>
+        </div>
       ) : (
         <div className="flex flex-col h-full">
           <ProgressBar progress={progress} onGoToLanding={onGoToLanding} />
