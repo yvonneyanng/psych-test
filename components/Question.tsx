@@ -2,14 +2,12 @@ import React from "react";
 import Image from "next/image";
 import ProgressBar from "./ProgressBar";
 import { QuestionProps } from "@/types/Question-types";
-
-import sampleImage from "../public/placeholder-image.png";
 import back from "../public/back-icon.png";
-
 import { useTranslations } from "next-intl";
 
 export default function Question({
   question,
+  image,
   options,
   onAnswer,
   onGoBack,
@@ -42,13 +40,13 @@ export default function Question({
         <p className="text-lg text-center font-semibold mt-5 w-[85dvw]">
           {question}
         </p>
-        <Image src={sampleImage} width={100} alt="Plot Image" />
-        <div className="flex flex-col space-y-5">
+        <Image src={image} width={250} className="rounded" alt="Plot Image" />
+        <div className="flex flex-col">
           {options.map((option, index) => (
             <button
               key={index}
               onClick={() => onAnswer(index)}
-              className="bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300 w-[80dvw]"
+              className="bg-gray-200 text-black px-4 py-2 mb-5 rounded hover:bg-gray-300 w-[80dvw]"
             >
               {option}
             </button>

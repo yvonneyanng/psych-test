@@ -1,0 +1,15 @@
+export const questionImages: Record<string, string> = {
+  q1: require("./q1.png"),
+  q2: require("./q2.png"),
+  q3: require("./q3.png"),
+  q4: require("./q4.png"),
+  q5: require("./q5.png"),
+  q6: require("./q6.png"),
+  q7: require("./q7.png"),
+  q8: require("./q8.png"),
+  q9: require("./q9.png"),
+  q10: require("./q10.png"),
+  q11: require("./q11.png"),
+  q12: require("./q12.png"),
+  q13: require("./q13.png"),
+};
