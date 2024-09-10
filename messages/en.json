@@ -9,28 +9,28 @@
     "q1": {
       "title": "What do you most want to do first after arriving in Australia?",
       "options": {
-        "1": "Find a place in your school or city where you can study or work on your own projects",
-        "2": "Can't wait to join the school's orientation activities and meet new friends",
-        "3": "Search for job opportunities near your home",
-        "4": "Explore the city and find interesting places to visit"
+        "1": "Find a place where you can study or \nwork on your own projects",
+        "2": "Can't wait to join the school's \norientation and meet new friends",
+        "3": "Search for job opportunities \nnear your home",
+        "4": "Explore the city and \nvisit interesting places"
       }
     },
     "q2": {
       "title": "How would you like to spend an ordinary weekend?",
       "options": {
         "1": "Stay at home to finish assignments or review coursework",
-        "2": "Join various activities or gatherings with friends",
-        "3": "Work, especially if there's double pay on weekends",
-        "4": "Go out and have fun; surfing, fishing, or running"
+        "2": "Join various activities or \nhang out with friends",
+        "3": "Work for double pay",
+        "4": "Go out and have fun"
       }
     },
     "q3": {
       "title": "What would you do if you don't understand the class content?",
       "options": {
-        "1": "Immediately seek additional learning resources, like consulting the teacher or getting tutoring",
-        "2": "Form a study group with classmates to discuss and solve the problem together",
-        "3": "Ask classmates or solve it quickly by yourself; it's okay if it's not perfect, but work must be done",
-        "4": "Take a break to relax before tackling the problem again"
+        "1": "Immediately seeking for \nadditional learning resources",
+        "2": "Form a study group with classmates",
+        "3": "Ask classmates or solve \nit quickly by yourself",
+        "4": "Take a break to relax before \ntackling the problem again"
       }
     },
     "q4": {
@@ -39,7 +39,7 @@
         "1": "Maybe not this time, I have another class later, I'll go home to prepare",
         "2": "Why not! Hanging out with friends is more fun than attending class",
         "3": "Sure, but I might have to leave early because I have work later",
-        "4": "No problem! Should we catch a movie after eating?"
+        "4": "No problem! Should we \ncatch a movie after eating?"
       }
     },
     "q5": {
@@ -48,7 +48,7 @@
         "1": "Study hard to enhance professional knowledge and improve grades",
         "2": "Choose an internship related to interpersonal skills to expand your social circle",
         "3": "Choose an internship that enhances workplace skills and offers compensation",
-        "4": "Choose an internship that balances work and travel"
+        "4": "Choose an internship that \nbalances work and travel"
       }
     },
     "q6": {
@@ -125,19 +125,19 @@
     },
     "goback": "Go back",
     "ending": "Story Ending",
-    "submit": "View Test Results",
-    "loading": "Analyzing..."
+    "submit": "View Results",
+    "loading": "Loading..."
   },
   "Result": {
-    "saveHint": "→ Long press the image to save the test result ←",
+    "saveHint": "→ Long press to save the test result ←",
     "copyButton": "Copy Link",
     "copied": "Copied!",
     "againButton": "Test Again",
-    "subscribeTitle": "Subscribe to First-hand News for International Students in Australia!",
+    "subscribeTitle": "Subscribe to ISIA News Letter!",
     "namePH": "Name",
     "emailPH": "Email",
     "invalidEmail": "Invalid email address",
     "subscribeButton": "Subscribe",
-    "promoteTitle": "Welcome to Join the International Students in Australia Community!"
+    "promoteTitle": "Join ISIA Community!"
   }
 }

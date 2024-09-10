@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import ProgressBar from "./ProgressBar";
 import { GenerateResultProps } from "@/types/GenerateResult-types";
-import logo from "../assets/logo.png";
-
+import logo from "../assets/logo-loading.png";
 import placeholder from "../public/placeholder-image.png";
 import { useTranslations } from "next-intl";
 
@@ -20,10 +19,10 @@ export default function GenerateResult({
     setTimeout(() => {
       setIsLoading(false);
       onGenerate();
-    }, 10000);
+    }, 2000);
   };
   return (
-    <div className="flex flex-col items-center justify-center h-[100dvh]">
+    <div className="flex flex-col items-center justify-center h-[100dvh] max-w-screen-xs md:pt-20">
       {isLoading ? (
         <div className="text-black space-y-5">
           <div className="animate-jump">
@@ -43,7 +42,7 @@ export default function GenerateResult({
             />
             <button
               onClick={handleClick}
-              className="bg-gray-200 text-black px-4 py-2 rounded mt-5"
+              className="bg-gray-200 text-xl text-black px-6 py-3 rounded-full mt-5"
             >
               {t("submit")}
             </button>

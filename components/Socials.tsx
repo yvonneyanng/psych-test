@@ -43,7 +43,7 @@ export default function Socials() {
     },
   ];
   return (
-    <div className="w-[80dvw] bg-zinc-300 mt-5 rounded">
+    <div className="w-[80dvw] bg-zinc-300 mt-5 rounded max-w-xs">
       <p className="text-center p-5">{t("promoteTitle")}</p>
       <div className="flex justify-center items-center space-x-5 mb-5">
         {socials.map((social, index) => (

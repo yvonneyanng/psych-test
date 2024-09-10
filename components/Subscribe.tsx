@@ -10,7 +10,7 @@ export default function Subscribe() {
   const isButtonDisabled = name === "" || email === "";
 
   return (
-    <div className="w-[80dvw] bg-zinc-300 mt-5 rounded">
+    <div className="w-[80dvw] bg-zinc-300 mt-5 rounded max-w-xs">
       <p className="text-center p-5">{t("subscribeTitle")}</p>
       <div className="flex flex-col justify-center items-center space-y-3">
         <input

@@ -25,11 +25,15 @@ export default function Quiz() {
   });
   const [step, setStep] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [score, setScore] = useState(0);
+  const [answers, setAnswers] = useState<number[]>(Array(13).fill(null));
 
   const startQuiz = () => setStep(1);
 
-  const handleNextQuestion = (index: number) => {
+  const handleNextQuestion = (selectedOption: number) => {
+    const updatedAnswers = [...answers];
+    updatedAnswers[currentQuestionIndex] = selectedOption;
+    setAnswers(updatedAnswers);
+
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
@@ -48,25 +52,42 @@ export default function Quiz() {
     setStep(0);
   };
 
-  const handleGenerateResult = () => {
-    setStep(4);
-  };
-
   const handleRestart = () => {
     setCurrentQuestionIndex(0);
-    setScore(0);
+    setAnswers(Array(13).fill(null)); // Reset answers
     setStep(0);
   };
 
+  const calculateResult = () => {
+    const counts = [0, 0, 0, 0];
+    answers.forEach((answer) => {
+      if (answer !== null) {
+        counts[answer]++;
+      }
+    });
+    const totalAnswered = answers.filter((answer) => answer !== null).length;
+    const percentages = counts.map((count) => (count / totalAnswered) * 100);
+
+    const maxPercentage = Math.max(...percentages);
+    const resultIndex = percentages.indexOf(maxPercentage);
+
+    const animals = ["鴨嘴獸", "袋鼠", "袋熊", "無尾熊"];
+    return animals[resultIndex];
+  };
+
+  const handleGenerateResult = () => {
+    setStep(4);
+  };
   const progress =
     step === 3 ? 100 : (currentQuestionIndex / questions.length) * 100;
 
   return (
-    <>
+    <div className="bg-primary">
       {step === 0 && <Landing onStart={startQuiz} />}
       {step === 1 && (
         <Question
           question={questions[currentQuestionIndex].question}
+          id={currentQuestionIndex}
           image={questions[currentQuestionIndex].image}
           options={questions[currentQuestionIndex].options}
           onAnswer={handleNextQuestion}
@@ -83,7 +104,9 @@ export default function Quiz() {
           progress={progress}
         />
       )}
-      {step === 4 && <Result onRestart={handleRestart} />}
-    </>
+      {step === 4 && (
+        <Result onRestart={handleRestart} result={calculateResult()} />
+      )}
+    </div>
   );
 }

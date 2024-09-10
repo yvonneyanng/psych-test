@@ -23,6 +23,9 @@ const config: Config = {
       animation: {
         jump: "jump 1s ease-in-out infinite",
       },
+      colors: {
+        primary: "#89898d",
+      },
     },
   },
   plugins: [],

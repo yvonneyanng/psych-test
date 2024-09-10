@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { LandingProps } from "@/types/Landing-types";
+import Image from "next/image";
+import logo from "../assets/logo-landing.png";
 
 export default function Landing({ onStart }: LandingProps) {
   const t = useTranslations("Landing");
@@ -19,16 +21,14 @@ export default function Landing({ onStart }: LandingProps) {
   }, []);
 
   return (
-    <div className="h-[100dvh] flex flex-col justify-start items-center pt-10">
+    <div className="flex flex-col justify-start items-center bg-white h-min-[100svh] pb-16 pt-10 md:h-screen md:pt-20">
       <div className="flex flex-col self-end px-6">
         <div className="bg-zinc-400 rounded-full">
           <Link href="/" locale="zh-TW">
             <div
               onClick={() => setSelectedLang("zh-TW")}
-              className={`p-2 text-sm text-center rounded-full cursor-pointer ${
-                selectedLang === "zh-TW"
-                  ? "bg-zinc-500 text-white"
-                  : "bg-transparent text-gray-800"
+              className={`p-2 text-sm text-center text-white rounded-full cursor-pointer ${
+                selectedLang === "zh-TW" ? "bg-zinc-500" : "bg-transparent"
               }`}
             >
               中
@@ -37,10 +37,8 @@ export default function Landing({ onStart }: LandingProps) {
           <Link href="/en">
             <div
               onClick={() => setSelectedLang("en")}
-              className={`p-2 text-sm text-center rounded-full cursor-pointer ${
-                selectedLang === "en"
-                  ? "bg-zinc-500 text-white"
-                  : "bg-transparent text-gray-800"
+              className={`p-2 text-sm text-center text-white rounded-full cursor-pointer ${
+                selectedLang === "en" ? "bg-zinc-500" : "bg-transparent"
               }`}
             >
               EN
@@ -48,13 +46,14 @@ export default function Landing({ onStart }: LandingProps) {
           </Link>
         </div>
       </div>
-      <div className="flex flex-col flex-1 justify-center items-center space-y-10">
-        <div className="bg-gray-300 h-72 w-60 flex justify-center items-center">
+      <div className="flex flex-col flex-1 justify-start items-center space-y-5 pt-5">
+        <Image src={logo} width={80} alt="logo" />
+        <div className="bg-zinc-300 h-72 w-60 flex justify-center items-center">
           {t("description")}
         </div>
         <button
           onClick={onStart}
-          className="bg-gray-300 text-black px-4 py-2 rounded"
+          className="bg-zinc-300 text-black px-6 py-3 rounded-full text-xl"
         >
           {t("startButton")}
         </button>
