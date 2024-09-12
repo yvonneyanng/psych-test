@@ -22,7 +22,8 @@
       "@/constants/*": ["./constants/*"],
       "@/components/*": ["./components/*"],
       "@/*": ["./*"]
-    }
+    },
+    "types": ["jest", "node"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
