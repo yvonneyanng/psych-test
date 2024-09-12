@@ -5,7 +5,7 @@
   <strong>International Student In Australia</strong>
 </h2>
 
-<p align="center">This is the first version of <a href="https://isia.vercel/app">ISIA's Just-For-Fun Quiz</a> built with Next.JS leveraging Tailwind CSS.</p>
+<p align="center">This is the first version of <a href="https://isia.vercel.app">ISIA's Just-For-Fun Quiz</a> built with Next.JS leveraging Tailwind CSS.</p>
 
 ## 🛠️ set-up
 
