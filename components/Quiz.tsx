@@ -4,12 +4,13 @@ import Landing from "./Landing";
 import Question from "./Question";
 import Result from "./Result";
 import GenerateResult from "./GenerateResult";
+import Description from "./Description";
 import { questionImages } from "@/assets/questionImages";
 import { useTranslations } from "next-intl";
 
 export default function Quiz() {
   const t = useTranslations("Question");
-  const optionPoints = [10, 20, 30, 40]; // Points assigned to options
+  const optionPoints = [10, 20, 30, 40];
   const questions = Array.from({ length: 13 }, (_, index) => {
     const questionNumber = `q${index + 1}`;
     return {
@@ -24,23 +25,16 @@ export default function Quiz() {
     };
   });
 
-  // Track both points and frequency of selections
   const [step, setStep] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [points, setPoints] = useState<number[]>(Array(13).fill(0));
-  const [frequency, setFrequency] = useState<number[]>([0, 0, 0, 0]);
 
   const startQuiz = () => setStep(1);
 
   const handleNextQuestion = (selectedOption: number) => {
-    const updatedPoints = [...points];
-    updatedPoints[currentQuestionIndex] = optionPoints[selectedOption];
-
-    const updatedFrequency = [...frequency];
-    updatedFrequency[selectedOption] += 1;
-
-    setPoints(updatedPoints);
-    setFrequency(updatedFrequency);
+    const updatedAnswers = [...points];
+    updatedAnswers[currentQuestionIndex] = optionPoints[selectedOption];
+    setPoints(updatedAnswers);
 
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -63,22 +57,10 @@ export default function Quiz() {
   const handleRestart = () => {
     setCurrentQuestionIndex(0);
     setPoints(Array(13).fill(0));
-    setFrequency([0, 0, 0, 0]);
     setStep(0);
   };
 
   const calculateResult = () => {
-    const maxFrequency = Math.max(...frequency);
-    const mostFrequentTypes = frequency.reduce<number[]>(
-      (acc, freq, index) => (freq === maxFrequency ? [...acc, index] : acc),
-      []
-    );
-
-    if (mostFrequentTypes.length === 1) {
-      const animals = ["鴨嘴獸", "袋鼠", "袋熊", "無尾熊"];
-      return animals[mostFrequentTypes[0]];
-    }
-
     const totalPoints = points.reduce(
       (sum: number, point: number) => sum + point,
       0
@@ -100,12 +82,23 @@ export default function Quiz() {
   };
 
   const progress =
-    step === 3 ? 100 : (currentQuestionIndex / questions.length) * 100;
+    step === 3
+      ? 100
+      : ((currentQuestionIndex + (step === 1 ? 0 : 1)) /
+          (questions.length + 1)) *
+        100;
 
   return (
-    <div className="bg-primary">
+    <>
       {step === 0 && <Landing onStart={startQuiz} />}
       {step === 1 && (
+        <Description
+          progress={progress}
+          onGoToLanding={handleGoToLanding}
+          onStartQuiz={() => setStep(2)}
+        />
+      )}
+      {step === 2 && (
         <Question
           question={questions[currentQuestionIndex].question}
           id={currentQuestionIndex}
@@ -128,6 +121,6 @@ export default function Quiz() {
       {step === 4 && (
         <Result onRestart={handleRestart} result={calculateResult()} />
       )}
-    </div>
+    </>
   );
 }
