@@ -25,7 +25,7 @@ export default function Result({ onRestart, result }: ResultProps) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-start h-min-[100svh] py-10 max-w-screen-xs md:py-20">
+    <div className="flex flex-col items-center justify-start h-min-[100svh] py-10 max-w-screen-xs md:py-20 bg-zinc-400">
       <Image
         src={sampleResult}
         alt="Picture of the author"

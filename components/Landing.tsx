@@ -4,11 +4,12 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { LandingProps } from "@/types/Landing-types";
 import Image from "next/image";
-import logo from "../assets/logo-landing.png";
+import logoTW from "../assets/logo-zh-TW.png";
+import logoEN from "../assets/logo-en.png";
+import logo from "../assets/logo.png";
 
 export default function Landing({ onStart }: LandingProps) {
   const t = useTranslations("Landing");
-
   const [selectedLang, setSelectedLang] = useState("zh-TW");
 
   useEffect(() => {
@@ -47,8 +48,15 @@ export default function Landing({ onStart }: LandingProps) {
         </div>
       </div>
       <div className="flex flex-col flex-1 justify-start items-center space-y-5 pt-5">
-        <Image src={logo} width={80} alt="logo" />
-        <div className="bg-zinc-300 h-72 w-60 flex justify-center items-center">
+        <div className="flex flex-col justify-center items-center space-y-2">
+          <Image src={logo} height={80} alt="logo" />
+          <Image
+            src={selectedLang === "zh-TW" ? logoTW : logoEN}
+            height={30}
+            alt="logo"
+          />
+        </div>
+        <div className="bg-zinc-300 h-64 w-60 flex justify-center items-center">
           {t("description")}
         </div>
         <button

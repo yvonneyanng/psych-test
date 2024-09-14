@@ -24,8 +24,7 @@ const config: Config = {
         jump: "jump 1s ease-in-out infinite",
       },
       colors: {
-        primary: "#89898d",
-        progressBarColor: "#FE9484",
+        primary: "#FE9484",
       },
     },
   },

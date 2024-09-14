@@ -38,7 +38,7 @@ export default function Question({
           <p className="text-black text-sm">{t("goback")}</p>
         </button>
         <div className="flex flex-col flex-1 items-center justify-start space-y-5">
-          <p className="text-lg text-center font-medium w-[75dvw] max-w-xs whitespace-pre-wrap leading-tight mt-1 bg-white bg-opacity-50 py-3 rounded-lg border border-progressBarColor">
+          <p className="text-lg text-center font-medium w-[75dvw] max-w-xs whitespace-pre-wrap leading-tight mt-1 bg-white bg-opacity-50 py-3 rounded-lg border border-primary">
             Q{id + 1}. {question}
           </p>
           <Image
@@ -52,7 +52,7 @@ export default function Question({
               <button
                 key={index}
                 onClick={() => onAnswer(index)}
-                className="bg-white text-black px-4 h-12 mb-4 rounded-lg hover:bg-gray-300 text-sm whitespace-pre-wrap leading-tight shadow-[2px_2px_2px_0px_rgba(0,0,0,0.4)]"
+                className="bg-white text-black px-4 h-12 mb-4 rounded-lg hover:bg-zinc-200 text-sm whitespace-pre-wrap leading-tight shadow-[2px_2px_2px_0px_rgba(0,0,0,0.4)]"
               >
                 {option}
               </button>
