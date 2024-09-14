@@ -23,6 +23,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
+      <head>
+        <link rel="icon" href="/logo.png" />
+      </head>
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
           {children}

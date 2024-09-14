@@ -25,6 +25,7 @@ const config: Config = {
       },
       colors: {
         primary: "#89898d",
+        progressBarColor: "#FE9484",
       },
     },
   },
