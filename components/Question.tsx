@@ -2,14 +2,13 @@ import React from "react";
 import Image from "next/image";
 import ProgressBar from "./ProgressBar";
 import { QuestionProps } from "@/types/Question-types";
-
-import sampleImage from "../public/placeholder-image.png";
-import back from "../public/back-icon.png";
-
 import { useTranslations } from "next-intl";
+import { IoIosArrowBack } from "react-icons/io";
 
 export default function Question({
   question,
+  id,
+  image,
   options,
   onAnswer,
   onGoBack,
@@ -20,39 +19,45 @@ export default function Question({
   const t = useTranslations("Question");
 
   return (
-    <div className="flex flex-col items-center justify-start h-[100dvh]">
-      <ProgressBar onGoToLanding={onGoToLanding} progress={progress} />
-      <button
-        onClick={onGoBack}
-        className={`flex w-[85dvw] items-center mt-5 ${
-          isFirstQuestion ? "invisible" : ""
-        }`}
-        disabled={isFirstQuestion}
-      >
-        <Image
-          src={back}
-          height={30}
-          width={30}
-          alt="Back"
-          className="filter invert"
-        />
-        <p className="text-white text-sm">{t("goback")}</p>
-      </button>
-      <div className="flex flex-col flex-1 items-center justify-start space-y-10">
-        <p className="text-lg text-center font-semibold mt-5 w-[85dvw]">
-          {question}
-        </p>
-        <Image src={sampleImage} width={100} alt="Plot Image" />
-        <div className="flex flex-col space-y-5">
-          {options.map((option, index) => (
-            <button
-              key={index}
-              onClick={() => onAnswer(index)}
-              className="bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300 w-[80dvw]"
-            >
-              {option}
-            </button>
-          ))}
+    <div className="relative flex flex-col items-center justify-start min-h-[100dvh] max-w-screen-xs md:pt-20">
+      <div
+        className="absolute inset-0 bg-cover bg-center z-0"
+        style={{ backgroundImage: `url('questionBG.png')` }}
+      ></div>
+
+      <div className="relative z-10 flex flex-col items-center justify-start space-y-3">
+        <ProgressBar onGoToLanding={onGoToLanding} progress={progress} />
+        <button
+          onClick={onGoBack}
+          className={`flex w-[75dvw] max-w-xs items-center ${
+            isFirstQuestion ? "invisible" : ""
+          }`}
+          disabled={isFirstQuestion}
+        >
+          <IoIosArrowBack size={20} />
+          <p className="text-black text-sm">{t("goback")}</p>
+        </button>
+        <div className="flex flex-col flex-1 items-center justify-start space-y-5">
+          <p className="text-lg text-center font-medium w-[75dvw] max-w-xs whitespace-pre-wrap leading-tight mt-1 bg-white bg-opacity-50 py-3 rounded-lg border border-primary">
+            Q{id + 1}. {question}
+          </p>
+          <Image
+            src={image}
+            height={170}
+            className="rounded-xl"
+            alt="Plot Image"
+          />
+          <div className="flex flex-col w-[75dvw] max-w-xs">
+            {options.map((option, index) => (
+              <button
+                key={index}
+                onClick={() => onAnswer(index)}
+                className="bg-white text-black px-4 h-12 mb-4 rounded-lg hover:bg-zinc-200 text-sm whitespace-pre-wrap leading-tight shadow-[2px_2px_2px_0px_rgba(0,0,0,0.4)]"
+              >
+                {option}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
