@@ -1,6 +1,7 @@
 {
   "Landing": {
-    "title": "Title",
+    "titleLine1": "Who's Your",
+    "titleLine2": "Aussie Study Pal?",
     "startButton": "Start",
     "description": "Description",
     "enterButton": "Let's Go"

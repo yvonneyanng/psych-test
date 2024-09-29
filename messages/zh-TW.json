@@ -1,6 +1,7 @@
 {
   "Landing": {
-    "title": "標題",
+    "titleLine1": "誰是你的",
+    "titleLine2": "澳洲留學好夥伴？",
     "startButton": "開始測驗",
     "description": "描述",
     "enterButton": "出發"
@@ -131,6 +132,7 @@
   "Result": {
     "saveHint": "→ 長按圖片儲存測驗結果 ←",
     "copyButton": "複製連結",
+    "copied": "連結已複製",
     "againButton": "再測一次",
     "subscribeTitle": "訂閱留學生在澳洲第一手消息！",
     "namePH": "姓名",
