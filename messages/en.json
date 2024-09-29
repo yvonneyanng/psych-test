@@ -2,8 +2,13 @@
   "Landing": {
     "titleLine1": "Who's Your",
     "titleLine2": "Aussie Study Pal?",
-    "startButton": "Start",
-    "description": "Description",
+    "startButton": "Start"
+  },
+  "Description": {
+    "description1": "One day,\nyou find yourself in an enchanting land",
+    "description2": "Australia",
+    "description3": "this place is known for its natural beauty\nand home to four iconic animals:\nplatypus, kangaroo, wombat, and koala.\nAs an international student, \nyou might not yet know\nwhich type you belong to.\nTo help you understand yourself better,\nthe locals prepared a fun quiz.\nBy answering the following questions,\nyou’ll find out who is your",
+    "description4": "Aussie Study Pal",
     "enterButton": "Let's Go"
   },
   "Question": {

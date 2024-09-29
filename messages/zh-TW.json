@@ -2,8 +2,13 @@
   "Landing": {
     "titleLine1": "誰是你的",
     "titleLine2": "澳洲留學好夥伴？",
-    "startButton": "開始測驗",
-    "description": "描述",
+    "startButton": "開始測驗"
+  },
+  "Description": {
+    "description1": "某天\n你來到了遙遠且充滿妹裡的國度",
+    "description2": "澳洲",
+    "description3": "這裡不僅有著獨特的自然風光\n還孕育了四種代表性動物\n它們象徵著不同的生活方式與性格\n分別是鴨嘴獸、袋鼠、袋熊和無尾熊\n作為留學生的你或許還不知道\n自己屬於哪一種類型\n為了幫助你更好地了解自己\n當地居民特地準備了一份有趣的測驗\n通過回答以下問題\n你將能夠發現自己與哪一種動物更相似\n從而了解誰是你的",
+    "description4": "澳洲留學好夥伴",
     "enterButton": "出發"
   },
   "Question": {

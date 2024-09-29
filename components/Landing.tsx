@@ -66,7 +66,7 @@ export default function Landing({ onStart }: LandingProps) {
               ✶
             </div>
             <div
-              className="absolute top-4 right-28 text-white text-xl"
+              className="absolute top-4 right-24 text-white text-xl"
               style={{ textShadow: "2px 2px 2px rgba(0,0,0,0.3)" }}
             >
               ✶

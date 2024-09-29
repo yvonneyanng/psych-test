@@ -28,4 +28,15 @@ body {
     height: 100vh;
     margin: 0;
   }
+
+  .bg-description {
+    background-color: transparent;
+    background-image: url("../../assets/descriptionBG.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+  }
 }
