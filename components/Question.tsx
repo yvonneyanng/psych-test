@@ -19,12 +19,7 @@ export default function Question({
   const t = useTranslations("Question");
 
   return (
-    <div className="relative flex flex-col items-center justify-start min-h-[100dvh] max-w-screen-xs md:pt-20">
-      <div
-        className="absolute inset-0 bg-cover bg-center z-0"
-        style={{ backgroundImage: `url('questionBG.png')` }}
-      ></div>
-
+    <div className="relative flex flex-col items-center justify-start min-h-[100dvh] max-w-screen-xs md:pt-20 bg-custom">
       <div className="relative z-10 flex flex-col items-center justify-start space-y-3">
         <ProgressBar onGoToLanding={onGoToLanding} progress={progress} />
         <button
