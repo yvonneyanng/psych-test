@@ -8,8 +8,8 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: hidden;
-  height: 100vh;
+  /* overflow: hidden; */
+  height: 100dvh;
   margin: 0;
 }
 
@@ -24,8 +24,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    overflow: hidden;
-    height: 100vh;
+    height: 100dvh;
     margin: 0;
   }
 
@@ -35,8 +34,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    overflow: hidden;
-    height: 100vh;
+    height: 100dvh;
     margin: 0;
   }
 }

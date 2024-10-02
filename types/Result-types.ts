@@ -1,4 +1,4 @@
 export interface ResultProps {
   onRestart: () => void;
-  result: string;
+  result: number;
 }

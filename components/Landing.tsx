@@ -22,7 +22,7 @@ export default function Landing({ onStart }: LandingProps) {
   }, []);
 
   return (
-    <div className="relative flex flex-col justify-start items-center h-[100dvh] md:h-screen bg-custom">
+    <div className="relative flex flex-col justify-start items-center h-[100dvh] md:h-screen  bg-custom">
       <div className="absolute top-10 right-7 z-20 bg-white rounded-full">
         <Link href="/" locale="zh-TW">
           <div

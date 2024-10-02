@@ -67,13 +67,13 @@ export default function Quiz() {
     );
 
     if (totalPoints <= 130) {
-      return "鴨嘴獸";
+      return 0;
     } else if (totalPoints <= 260) {
-      return "袋鼠";
+      return 1;
     } else if (totalPoints <= 390) {
-      return "袋熊";
+      return 2;
     } else {
-      return "無尾熊";
+      return 3;
     }
   };
 

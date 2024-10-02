@@ -25,6 +25,10 @@ const config: Config = {
       },
       colors: {
         primary: "#FE9484",
+        type1: "#7db374",
+        type2: "#e7a137",
+        type3: "#8fb1d7",
+        type4: "#b4a8d6",
       },
     },
   },
