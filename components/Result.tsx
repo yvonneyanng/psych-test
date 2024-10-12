@@ -78,8 +78,10 @@ export default function Result({ onRestart, result }: ResultProps) {
     3: "typeKoala",
   };
 
+  const resultToTypeMapRef = useRef(resultToTypeMap);
+
   useEffect(() => {
-    const podcastType = resultToTypeMap[result];
+    const podcastType = resultToTypeMapRef.current[result];
     const recs = getRandomRecommendations(podcastType);
     setRecommendations(recs);
   }, [result]);
