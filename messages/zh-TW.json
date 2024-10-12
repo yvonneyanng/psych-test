@@ -135,7 +135,10 @@
     "loading": "正在分析..."
   },
   "Result": {
-    "saveButton": "儲存測驗結果",
+    "yourPal": "你的澳洲留學好夥伴是",
+    "percentage1": "你們有",
+    "percentage2": "相似",
+    "saveHint": "可截圖分享測驗結果",
     "copyButton": "複製連結",
     "copied": "連結已複製",
     "againButton": "再測一次",

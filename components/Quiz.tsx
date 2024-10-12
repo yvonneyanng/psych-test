@@ -28,6 +28,7 @@ export default function Quiz() {
   const [step, setStep] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [points, setPoints] = useState<number[]>(Array(13).fill(0));
+  const [optionCounts, setOptionCounts] = useState<number[]>(Array(4).fill(0));
 
   const startQuiz = () => setStep(1);
 
@@ -35,6 +36,10 @@ export default function Quiz() {
     const updatedAnswers = [...points];
     updatedAnswers[currentQuestionIndex] = optionPoints[selectedOption];
     setPoints(updatedAnswers);
+
+    const updatedOptionCounts = [...optionCounts];
+    updatedOptionCounts[selectedOption] += 1;
+    setOptionCounts(updatedOptionCounts);
 
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -57,24 +62,36 @@ export default function Quiz() {
   const handleRestart = () => {
     setCurrentQuestionIndex(0);
     setPoints(Array(13).fill(0));
+    setOptionCounts(Array(4).fill(0));
     setStep(0);
   };
 
   const calculateResult = () => {
-    const totalPoints = points.reduce(
-      (sum: number, point: number) => sum + point,
-      0
-    );
+    const totalPoints = points.reduce((sum, point) => sum + point, 0);
 
-    if (totalPoints <= 130) {
-      return 0;
-    } else if (totalPoints <= 260) {
-      return 1;
-    } else if (totalPoints <= 390) {
-      return 2;
+    const maxClicks = Math.max(...optionCounts);
+    const mostClickedOptions = optionCounts
+      .map((count, index) => (count === maxClicks ? index : null))
+      .filter((index) => index !== null);
+
+    let resultType;
+    let percentage;
+
+    if (mostClickedOptions.length === 1) {
+      resultType = mostClickedOptions[0];
+      percentage = Math.round((maxClicks / 13) * 100);
     } else {
-      return 3;
+      resultType =
+        totalPoints <= 130
+          ? 0
+          : totalPoints <= 260
+          ? 1
+          : totalPoints <= 390
+          ? 2
+          : 3;
+      percentage = Math.round((totalPoints / 520) * 100);
     }
+    return { resultType, percentage };
   };
 
   const handleGenerateResult = () => {
@@ -119,7 +136,11 @@ export default function Quiz() {
         />
       )}
       {step === 4 && (
-        <Result onRestart={handleRestart} result={calculateResult()} />
+        <Result
+          onRestart={handleRestart}
+          result={calculateResult().resultType}
+          percentage={calculateResult().percentage}
+        />
       )}
     </>
   );
