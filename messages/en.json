@@ -135,7 +135,7 @@
     "loading": "Loading..."
   },
   "Result": {
-    "saveHint": "Long press to save the test result",
+    "saveButton": "Download the result image",
     "copyButton": "Copy Link",
     "copied": "Copied!",
     "againButton": "Test Again",

@@ -1,10 +1,12 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ResultProps } from "@/types/Result-types";
+import { PodcastEpisode, PodcastTypes } from "@/types/Podcast-types";
 import Subscribe from "./Subscribe";
 import Socials from "./Socials";
+import { getRandomRecommendations } from "@/utils/podcastRec";
 
 import logoZH from "@/assets/logo-zh-TW.png";
 import kangaroo from "@/assets/results/kangaroo.png";
@@ -25,6 +27,7 @@ const options = {
 };
 
 export default function Result({ onRestart, result }: ResultProps) {
+  const [recommendations, setRecommendations] = useState<PodcastEpisode[]>([]);
   const [linkCopied, setLinkCopied] = useState(false);
   const t = useTranslations("Result");
 
@@ -67,6 +70,19 @@ export default function Result({ onRestart, result }: ResultProps) {
         console.error("Failed to copy: ", err);
       });
   };
+
+  const resultToTypeMap: Record<number, PodcastTypes> = {
+    0: "typePlatypus",
+    1: "typeRoo",
+    2: "typeWombat",
+    3: "typeKoala",
+  };
+
+  useEffect(() => {
+    const podcastType = resultToTypeMap[result];
+    const recs = getRandomRecommendations(podcastType);
+    setRecommendations(recs);
+  }, [result]);
 
   const backgroundClass = () => {
     switch (result) {
@@ -162,30 +178,21 @@ export default function Result({ onRestart, result }: ResultProps) {
                   </div>
                 </div>
               </div>
-              <div className="bg-white p-2 rounded-xl h-3/5">
+              <div className="bg-white p-2 rounded-xl h-3/5 space-y-2">
                 <p className="text-sm">{t("podcastTitle")}</p>
-                <div className="mt-2 space-y-2">
+                {recommendations.map((rec, index) => (
                   <a
-                    href="https://open.spotify.com/show/3EiRhEVXwc1l4trXSVJfpU"
+                    href={rec.link}
                     className={`flex flex-col py-1 px-2 rounded-md justify-end items-center ${backgroundClass()}`}
+                    key={index}
                   >
                     <div className="w-full flex font-bold justify-start items-center space-x-2">
                       <FaCirclePlay size={15} />
-                      <p className="text-sm">EP19</p>
+                      <p className="text-sm">EP.{rec.episode}</p>
                     </div>
-                    <p className="text-sm">拒絕拖延症！如何做好時間管理？</p>
+                    <p className="text-sm text-left w-full">{rec.title}</p>
                   </a>
-                  <a
-                    href="https://open.spotify.com/show/3EiRhEVXwc1l4trXSVJfpU"
-                    className={`flex flex-col py-1 px-2 rounded-md justify-end items-center ${backgroundClass()}`}
-                  >
-                    <div className="w-full flex font-bold justify-start items-center space-x-2">
-                      <FaCirclePlay size={15} />
-                      <p className="text-sm">EP19</p>
-                    </div>
-                    <p className="text-sm">拒絕拖延症！如何做好時間管理？</p>
-                  </a>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -196,7 +203,7 @@ export default function Result({ onRestart, result }: ResultProps) {
           onClick={prepareURL}
           className="flex-1 bg-zinc-300 text-black px-4 py-2 rounded mt-3"
         >
-          儲存測驗結果
+          {t("saveButton")}
         </button>
         <div className="flex space-x-3">
           <button

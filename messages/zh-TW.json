@@ -135,7 +135,7 @@
     "loading": "正在分析..."
   },
   "Result": {
-    "saveHint": "長按圖片儲存測驗結果",
+    "saveButton": "儲存測驗結果",
     "copyButton": "複製連結",
     "copied": "連結已複製",
     "againButton": "再測一次",
