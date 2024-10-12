@@ -130,9 +130,9 @@
       }
     },
     "goback": "Go back",
-    "ending": "Story Ending",
+    "ending": "Through this quiz, \nyou've found the animal that \nbest matches your personality. \nIt will be your companion on your study journey in Australia, helping you face challenges, connect with the local culture, and explore new opportunities. No matter the result, this marks a step in your self-discovery. Now, let’s see which animal will be your true companion \nin Australia!",
     "submit": "View Results",
-    "loading": "Loading..."
+    "loading": "Analyzing..."
   },
   "Result": {
     "yourPal": "Your Aussie Study Pal is",
