@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import { FaAngleRight } from "react-icons/fa6";
+import React from "react";
 import { useTranslations } from "next-intl";
 
 export default function DescriptionTextbox() {
-  const [lineIndex, setLineIndex] = useState(0);
   const t = useTranslations("Description");
   const lines = [
     t("description1"),
@@ -11,10 +9,6 @@ export default function DescriptionTextbox() {
     t("description3"),
     t("description4"),
   ];
-
-  const handleToggle = () => {
-    setLineIndex(1);
-  };
 
   return (
     <div className="relative flex flex-col items-center justify-center rounded-lg w-full h-full p-4 space-y-1 bg-white bg-opacity-70">

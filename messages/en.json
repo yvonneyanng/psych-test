@@ -130,12 +130,15 @@
       }
     },
     "goback": "Go back",
-    "ending": "Story Ending",
+    "ending": "Through this quiz, \nyou've found the animal that \nbest matches your personality. \nIt will be your companion on your study journey in Australia, helping you face challenges, connect with the local culture, and explore new opportunities. No matter the result, this marks a step in your self-discovery. Now, let’s see which animal will be your true companion \nin Australia!",
     "submit": "View Results",
-    "loading": "Loading..."
+    "loading": "Analyzing..."
   },
   "Result": {
-    "saveHint": "→ Long press to save the test result ←",
+    "yourPal": "Your Aussie Study Pal is",
+    "percentage1": "You are",
+    "percentage2": "alike",
+    "saveHint": "Screenshot & share your result with friends!",
     "copyButton": "Copy Link",
     "copied": "Copied!",
     "againButton": "Test Again",
@@ -145,6 +148,32 @@
     "invalidEmail": "Invalid email address",
     "subscribeButton": "Subscribe",
     "subscribed": "Subscribed!",
-    "promoteTitle": "Join ISIA Community!"
+    "promoteTitle": "Join ISIA Community!",
+    "platypus": "Platypus",
+    "kangaroo": "Kangaroo",
+    "wombat": "Wombat",
+    "koala": "Koala",
+    "platypusQuote": "Happy to be part of the top unis in the world!",
+    "kangarooQuote": "I’m a social butterfly!",
+    "wombatQuote": "I'm making the first pot of gold!",
+    "koalaQuote": "I’m gonna play around in Australia!",
+    "platypusHashtags": "# Gentle \n# Unique \n# High Adaptability \n# Diverse",
+    "kangarooHashtags": "# Social Butterfly \n# Making Friends \n# Connecting \n# Thrive in Social Circles",
+    "wombatHashtags": "# Goal-Achiever \n# Peresistent \n# Practical \n# Seeking Experience",
+    "koalaHashtags": "# Love Life \n# Exploring \n# Enjoy Leisure Time \n# Having Fun",
+    "platypusDesc1": "You're dedicated to your studies, highly goal-oriented, and plan your tasks well. You consistently prioritize assignments and review in library. 📖",
+    "platypusDesc2": "Your discipline leads to strong academic success, building a solid career foundation. Remember to relax and balance life. 💆‍♂️",
+    "platypusDesc3": "Studying in Australia is important, but remember to enjoy life too. Find your study partner and explore the charisma of Southern Hemisphere! 🏃‍♂️",
+    "kangarooDesc1": "We make friends easily, get along with diverse groups of people, and successfully balance academics with a vibrant and active social life. 🌝",
+    "kangarooDesc2": "For you, studying abroad is about relationships, with your social skills shining in teamwork and cultural exchange. 👯‍♂️",
+    "kangarooDesc3": "In Australia, you’ll meet all kinds of people and explore many places, but don’t forget to budget for your outings! Activate your study buddy radar now! ⚡️",
+    "wombatDesc1": "Known for your consistent hard work and endurance, you focus on results and gain valuable experience from any job or internship you did. ⛏️",
+    "wombatDesc2": "You balance work and academics, managing time to gain experience for a smooth post-graduation transition. 😎",
+    "wombatDesc3": "You have a clear career plan and are working toward it. Earning money is practical, but balance is key. Find your study buddy and enjoy Aussie life! 🥂",
+    "koalaDesc1": "You love life, exploring new things, and enjoying fun activities. Studying abroad for you means adventure, travel, and local culture. 🏄‍♀️",
+    "koalaDesc2": "You believe relaxation and fun enhance productivity and your abroad experience. Travel, activities, and friends are essential. 🙌",
+    "koalaDesc3": "Your open mind and positivity bring valuable experiences. Enjoy Australia, but balance academics and social life for a richer experience. 🌈",
+    "fansTitle": "Followers",
+    "podcastTitle": "Podcast Episode"
   }
 }
