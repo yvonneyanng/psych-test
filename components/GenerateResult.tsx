@@ -49,7 +49,7 @@ export default function GenerateResult({
               <Image src={koalaPFP} alt="logo" width={55} />
               <Image src={wombatPFP} alt="logo" width={60} />
             </div>
-            <p className="w-[70dvw] flex flex-col items-center justify-center rounded-lg p-4 space-y-1 bg-white bg-opacity-70 text-center text-md font-normal text-normal whitespace-pre-wrap">
+            <p className="w-[70dvw] flex flex-col items-center justify-center rounded-lg p-4 space-y-1 bg-white bg-opacity-70 text-center text-md font-normal text-normal whitespace-pre-wrap max-w-xs">
               {t("ending")}
             </p>
             <button

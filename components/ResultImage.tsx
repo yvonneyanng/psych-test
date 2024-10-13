@@ -80,7 +80,7 @@ export default function ResultImage({
 
   return (
     <div className="max-w-screen-xs">
-      <article className={`w-[100dvw] p-4 ${backgroundClass()}`}>
+      <article className={`md:w-[35dvw] p-4 ${backgroundClass()}`}>
         <div className="flex justify-between items-center">
           <Image
             src={locale === "en" ? logoEN : logoZH}
