@@ -141,7 +141,7 @@ export default function ResultImage({
             </div>
           </div>
           <div className="flex flex-col justify-end space-y-2 w-1/2 text-xs">
-            <div className="bg-white p-2 rounded-xl h-2/5">
+            <div className="bg-white p-2 rounded-xl">
               <p className="text-sm font-semibold">{t("fansTitle")}</p>
               <div className="mt-2 space-y-2 pl-1">
                 <div className="flex space-x-2 justify-start items-center">
@@ -172,23 +172,25 @@ export default function ResultImage({
                 </div>
               </div>
             </div>
-            <div className="bg-white p-2 rounded-xl h-3/5 space-y-2">
+            <div className="bg-white p-2 rounded-xl h-3/5 space-y-3">
               <p className="text-sm font-semibold">{t("podcastTitle")}</p>
-              {recommendations.map((rec, index) => (
-                <a
-                  href={rec.link}
-                  className={`flex flex-col py-1 px-2 rounded-md justify-end items-center ${backgroundClass()}`}
-                  key={index}
-                >
-                  <div className="w-full flex font-bold justify-start items-center space-x-2">
-                    <FaCirclePlay size={15} />
-                    <p className="text-sm">EP.{rec.episode}</p>
-                  </div>
-                  <p className="text-sm text-left w-full">
-                    {locale === "en" ? rec.titleEn : rec.title}
-                  </p>
-                </a>
-              ))}
+              <div className="space-y-2">
+                {recommendations.map((rec, index) => (
+                  <a
+                    href={rec.link}
+                    className={`flex flex-col py-1 px-2 rounded-md justify-end items-center ${backgroundClass()}`}
+                    key={index}
+                  >
+                    <div className="w-full flex font-bold justify-start items-center space-x-2">
+                      <FaCirclePlay size={15} />
+                      <p className="text-sm">EP.{rec.episode}</p>
+                    </div>
+                    <p className="text-sm text-left w-full">
+                      {locale === "en" ? rec.titleEn : rec.title}
+                    </p>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
