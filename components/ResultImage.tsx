@@ -79,8 +79,8 @@ export default function ResultImage({
   }, [result]);
 
   return (
-    <div className="max-w-screen-xs">
-      <article className={`md:w-[35dvw] p-4 ${backgroundClass()}`}>
+    <div className="w-full md:max-w-sm">
+      <article className={`p-4 ${backgroundClass()}`}>
         <div className="flex justify-between items-center">
           <Image
             src={locale === "en" ? logoEN : logoZH}
