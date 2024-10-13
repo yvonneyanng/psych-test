@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo-loading.png" alt="Icon" width="90" height="90">
+  <img src="assets/logo.png" alt="Icon" width="90" height="90">
 </p>
 <h2 align="center">
   <strong>International Student In Australia</strong>
