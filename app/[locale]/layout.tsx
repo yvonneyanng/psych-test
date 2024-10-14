@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Script from "next/script";
-import { usePathname } from "next/navigation";
-import { useEffect } from "react";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
@@ -28,9 +25,9 @@ export default async function RootLayout({
     <html lang={locale}>
       <head>
         <link rel="icon" href="/logo.png" />
+        <GoogleAnalytics />
       </head>
       <body className={inter.className}>
-        <GoogleAnalytics />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
