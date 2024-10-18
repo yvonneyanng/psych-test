@@ -10,6 +10,14 @@ import {
 
 export default function Socials() {
   const t = useTranslations("Result");
+  const handlePodcastClick = () => {
+    if (typeof window.gtag !== "undefined") {
+      window.gtag("event", "click", {
+        event_category: "Podcast Button",
+        event_label: "Podcasts",
+      });
+    }
+  };
   const socials = [
     {
       name: "Instagram",
@@ -42,6 +50,7 @@ export default function Socials() {
       link: "https://international-students-in-australia.notion.site/cd96739f9ee445baa2522f48de5ddc33?v=1f4d81dec8df4a3c8310007616596c76&pvs=4",
     },
   ];
+
   return (
     <div className="w-[80dvw] bg-zinc-300 mt-5 rounded max-w-xs">
       <p className="text-center p-5">{t("promoteTitle")}</p>
@@ -54,6 +63,7 @@ export default function Socials() {
             rel="noopener noreferrer"
             className="text-black"
             style={{ color: social.color }}
+            onClick={social.name === "Podcasts" ? handlePodcastClick : undefined}
           >
             {social.icon}
           </a>
