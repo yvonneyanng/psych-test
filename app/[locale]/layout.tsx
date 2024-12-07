@@ -22,7 +22,7 @@ export async function generateMetadata({
       description: messages.MetaData.description || "誰是你的澳洲留學代表物?",
       images: [
         {
-          url: "../../assets/preview.png",
+          url: "../../public/preview.png",
           alt: messages.MetaData.title || "留學生在澳洲",
         },
       ],
